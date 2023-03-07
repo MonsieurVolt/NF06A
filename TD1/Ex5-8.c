@@ -28,6 +28,9 @@ void Ex6(unsigned short x, int n, int p)
     unsigned short e = x << 16 - n + 1;
     e = e >> 16 - n + 1;
     printf("The result with the number %d is %d\n", x, (s | e | d));
+    // Correction prof :
+    // int mask = ~(~0 << p) << n - 1;
+    // printf("%d\n", mask ^ x);
 };
 void Ex7(int B, int H)
 {
