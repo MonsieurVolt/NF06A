@@ -127,34 +127,51 @@ void Ex9()
         printf("\n");
     }
 };
-// void Ex6() {
-//     int matrix1[SIZE][SIZE];
-//     int nbl = 4, nbc = 2;
-//     printf("Enter the number of lig and col : \n");
-//     scanf("%d", &nbl);
-//     scanf("%d", &nbc);
-//     for (int i = 0; i < nbl; i++)
-//     {
-//         for (int j = 0; j < nbc; j++)
-//         {
+void Ex6()
+{
+    int matrix1[SIZE][SIZE];
+    int nbl, nbc;
+    printf("Enter the number of lig and col : \n");
+    scanf("%d", &nbl);
+    scanf("%d", &nbc);
+    for (int i = 0; i < nbl; i++)
+    {
+        for (int j = 0; j < nbc; j++)
+        {
 
-//             printf("Enter the number for the lig %d and the col %d of the matrix: \n", i, j);
-//             scanf("%d", &matrix1[i][j]);
-//         }
-//     }
-//     for (int i =0; i < nbl; i++) {
-//         int idMin = 0;
-//         for (int j = 0; j < nbc; j++) {
-//             if (matrix1[i][j] < matrix1[i][idMin]) {
-//                 idMin = j;
-//             }
-//         }
-//         int isLower = 1;
-//         for (int j = 0; j < nbc; j++) {
-//             if (j != i && matrix1[j][idMin] <= matrix1[])
-//         }
-//     }
-// }
+            printf("Enter the number for the lig %d and the col %d of the matrix: \n", i, j);
+            scanf("%d", &matrix1[i][j]);
+        }
+    }
+
+    for (int i = 0; i < nbl; i++)
+    {
+        int idMin = 0;
+        for (int j = 0; j < nbc; j++)
+        {
+            if (matrix1[i][j] < matrix1[i][idMin])
+            {
+                idMin = j;
+            }
+        }
+
+        printf("%d\n", idMin);
+        int isLower = 1;
+        for (int j = 0; j < nbc; j++)
+        {
+            if (j != i && matrix1[i][idMin] <= matrix1[j][idMin])
+            {
+                isLower = 0;
+            }
+        }
+        if (isLower)
+        {
+            printf("The saddle point is : on lig : %d and on col : %d\n", i, idMin);
+            return;
+        }
+    }
+    printf("There is no saddle point\n");
+}
 int main()
 {
     int a = 1;
@@ -189,6 +206,8 @@ int main()
         case 5:
             Ex5();
             break;
+        case 6:
+            Ex6();
         case 9:
             Ex9();
             break;
