@@ -94,12 +94,12 @@ int main()
     struct Polar result;
     RectToPolar(number, &result);
     struct Rect a = {1.0, 0.0};
-    struct Rect b = {-2.0, -3.0};
-    struct Rect c = {-5.0, 1.0};
+    struct Rect b = {0.0, -1.0};
+    struct Rect c = {-1.0, -1.0};
     struct Rect r1, r2;
     SecondDegree(a, b, c, &r1, &r2);
-    printf("The number is : %lf+i%lf\n", r1.real, r1.imaginary);
-    printf("The number is : %lf+i%lf\n", r2.real, r2.imaginary);
+    printf("The number is : %0.2lf +  i%0.2lf\n", r1.real, r1.imaginary);
+    printf("The number is : %0.2lf + i%0.2lf\n", r2.real, r2.imaginary);
 
     // printf("The argument is : %lf and the modulus is : %lf\n", result.argument, result.modulus);
     // printf("The number is : %lf+i%lf\n", number.real, number.imaginary);
